@@ -11,11 +11,8 @@ import (
 )
 
 func buildClient() *http.Client {
-	proxyUrl, _ := url.Parse("http://10.0.1.144:9090")
-
 	client := &http.Client{
 	  Timeout: time.Second * 10,
-		Transport: &http.Transport{Proxy: http.ProxyURL(proxyUrl)},
 	}
 
 	return client
